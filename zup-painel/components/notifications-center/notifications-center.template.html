@@ -1,0 +1,11 @@
+<div ng-class="{ 'notifications-container': true, 'flash-bg': component.highlightNotificationBar}"><div class="notifications-center"><a popup-show="components/notifications-center/notifications-center-popover.template.html" popup-placement="bottom" popup-shown="component.onShownNotifications()" popup-class="notifications-popover" class="notifications-toggle"><span class="glyphicon glyphicon-bell"><span ng-if="component.unreadCount > 0" class="badge">{{ component.unreadCount }}</span></span></a></div><script id="components/notifications-center/notifications-center-popover.template.html" type="text/ng-template"><div class="popover-content">
+      <span class="loadingScrolling" ng-if="vm.loading"></span>
+      <p ng-if="component.notifications.length == 0 && !vm.loading"
+         class="nice-and-centered">Nenhuma notificação recebida.</p>
+      <notification
+        ng-repeat="notification in component.notifications"
+        notification="notification"
+        click-handler="component.onClickNotification(notification)"
+        delete-handler="component.onDeleteNotification(notification)">
+      </notification>
+    </div></script></div>

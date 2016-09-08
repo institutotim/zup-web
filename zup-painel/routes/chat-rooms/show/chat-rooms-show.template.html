@@ -1,0 +1,1 @@
+<div class="chat-rooms pages-animation"><div class="title"><ul><li><a ng-href="#/chat-rooms">Salas de chat</a></li><li>{{ room.title }}</li></ul><a href="" ng-click="editRoom()" class="btn btn-info btn-custom" ng-show="hasPermission('manage_chat_rooms')">Editar nome</a></div><zup-chat user="user" chattable-type="chat_room" chattable-id="{{ room.id }}"></zup-chat></div>

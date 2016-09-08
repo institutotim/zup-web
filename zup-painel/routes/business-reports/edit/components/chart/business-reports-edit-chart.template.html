@@ -1,0 +1,60 @@
+<div><script type="text/ng-template" id="routes/business-reports/edit/components/chart/explorer-template.html"><div class="container-fluid" style="padding: 0; margin-top: 25px;">
+      <div class="row-fluid">
+        <div class="col-xs-12">
+          <div class="cv-bootstrap">
+
+            <div class="cv-gui-panel hidden-print">
+
+              <div ng-if="cvOptions.backendUrl" class="dropdown m-b" style="display: inline-block; ">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" data-submenu>
+                  <i class="fa fa-fw fa-file"></i> Visualizações salvas <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu cv-gui-catalog-menu">
+
+                  <li class="dropdown-header">Visualizações pessoais</li>
+
+                  <li ng-repeat="sv in reststoreService.savedViews | orderBy:'sv.name'"
+                      ng-if="sv.owner == cvOptions.user"
+                      ng-click="reststoreService.addSavedView(sv.id)"><a
+                    style="max-width: 360px; overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap;"><i
+                    class="fa fa-fw"></i> {{ sv.name }}</a></li>
+
+                  <li class="dropdown-header">Compartilhado por outros</li>
+
+                  <li ng-repeat="sv in reststoreService.savedViews | orderBy:'sv.name'"
+                      ng-if="sv.shared && sv.owner != cvOptions.user" ng-click="reststoreService.addSavedView(sv.id)"><a
+                    style="max-width: 360px; overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap;"><i
+                    class="fa fa-fw"></i> {{ sv.name }}</a></li>
+
+                </ul>
+              </div>
+            </div>
+
+            <div class="cv-gui-workspace">
+
+              <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div ng-if="cubesService.state == 3" class="col-xs-12" style="margin-bottom: 10px;">
+                  <div class="alert alert-danger" style="margin: 0px;">
+                    <p>Não foi possível se conectar ao servidor: {{ cubesService.stateText }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row cv-views-container" style="margin-left: 0; margin-right: 0;">
+
+                <div ng-if="isCubeSelected()" style="display: none;"
+                     class="col-xs-12 cv-view-container sv{{ getView().id }}"
+                     ng-class="(cvOptions.studioTwoColumn ? 'col-sm-6' : 'col-sm-12')">
+                  <div>
+                    <div cv-studio-view hide-controls="!isEditable()" hide-borders="true" read-only="!isEditable()"
+                         view="getView()"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></script><div class="business-reports-chart"><div class="editable-chart" ng-if="editable"><h2 class="chart-title" inline-edit="chart.title" inline-edit-placeholder="Clique aqui para editar o título do novo gráfico" inline-edit-on-click inline-edit-on-blur="save" inline-edit-btn-edit=""></h2><div class="remove-chart"></div><div class="chart-container"><div class="chart-overlay" ng-show="!isCubeSelected()"><div class="overlay-controls"><h4>Que tipo de dados você gostaria de visualizar?</h4><div class="loading" ng-show="cubesService.state === 1"></div><div ng-repeat="cube in cubesService.cubesserver._cube_list | orderBy:'label'"><button style="margin-bottom: 10px; width: 40%" class="btn btn-primary" ng-click="studioViewsService.addViewCube(cube.name, index)">{{ cube.label }}</button></div><p ng-show="cubesService.state === 2 && cubesService.cubesserver._cube_list.length === 0" class="disabled"><a>Nenhum repositório encontrado.</a></p><p ng-show="cubesService.state === 3" class="disabled text-danger"><a>Carregamento falhou</a></p></div></div><ng-include onload="onChartTemplateLoaded()" src="'routes/business-reports/edit/components/chart/explorer-template.html'"></ng-include><button title="Remover Visualização" class="btn btn-danger remove-cube" ng-click="removeView()" ng-show="isCubeSelected()">X</button></div><p class="chart-description" inline-edit="chart.description" inline-edit-placeholder="Clique aqui para editar a descrição do novo gráfico. Opcional." inline-edit-on-click inline-edit-on-blur="save" inline-edit-btn-edit=""></p></div><div class="view-chart" ng-if="!editable"><h2>{{chart.title}}</h2><div class="chart-container"><ng-include onload="onChartTemplateLoaded()" src="'routes/business-reports/edit/components/chart/explorer-template.html'"></ng-include></div><p class="chart-description" ng-if="chart.description && chart.description != ''">{{chart.description}}</p></div></div></div>

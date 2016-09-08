@@ -1,0 +1,10 @@
+<button type="button" class="close" ng-click="close()"></button><div class="login"><h1>Já é cadastrado?</h1><h6 ng-show="reloginmsg">{{ reloginmsg }}</h6><form role="form" ng-submit="login()"><div class="form-group"><input type="email" class="form-control" ng-class="{'has-error': loginError}" id="email" placeholder="E-mail" ng-model="inputs.email"></div><div class="form-group"><input type="password" class="form-control" ng-class="{'has-error': loginError}" id="password" placeholder="Senha" ng-model="inputs.password"></div><div class="text-center"><a href="" class="forgot-password" ng-click="forgot()">Esqueceu a senha?</a> <button type="submit" class="btn btn-default btn-azul btn-login">Entrar</button></div></form></div><div class="signup"><h1>Não é cadastrado?</h1><!--<p>Inicie o cadastro usando sua conta</p>
+
+    <div class="social-icons">
+        <a href="#" class="facebook"></a>
+        <a href="#" class="twitter"></a>
+        <a href="#" class="gplus"></a>
+    </div>
+
+    <div class="clearfix"></div>
+    <p class="or">OU</p>--><a href="" ng-click="signup()" class="btn btn-default btn-azul btn-login">Cadastre-se aqui</a></div>
