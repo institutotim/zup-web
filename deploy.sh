@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -xe
-[ "$CI_BUILD_REF_NAME" = "" ] && CI_BUILD_REF_NAME=$(git symbolic-ref --short -q HEAD)
+CI_BUILD_REF_NAME=$TRAVIS_BRANCH
 
 if [ "$CI_BUILD_REF_NAME" = "unicef" ]; then
     docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
