@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -xe
 [ "$CI_BUILD_REF_NAME" = "" ] && CI_BUILD_REF_NAME=$(git symbolic-ref --short -q HEAD)
 
 if [ "$CI_BUILD_REF_NAME" = "unicef" ]; then
