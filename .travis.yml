@@ -5,6 +5,9 @@ language: python
 services:
   - docker
 
+script:
+  - docker build -t institutotim/zup-web:$TRAVIS_BRANCH .
+
 deploy:
   provider: script
   script: ./deploy.sh
