@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>PAGE_TITLE</title>
+  <title>ZUP Cascavel</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-8 text-center col-xs-offset-2">
-        <a href="#" class="zup"><img src="images/logo.png" class="img-responsive" alt="PAGE_TITLE"></a>
+        <a href="#" class="zup"><img id="logo" src="images/logo.png" class="img-responsive" alt="ZUP Cascavel"></a>
       </div>
     </div>
   </div>
@@ -30,7 +30,6 @@
         <ul class="nav nav-pills">
           <li><a href="#participe"><i class="img"><img src="images/header_menu_icone1_ativo@2x.png" class="img-responsive"></i> Participe</a></li>
           <li><a href="#comofunciona"><i class="ion-gear-a"></i> Como funciona</a></li>
-          <li class="stats"><a href="#estatisticas"><i class="ion-stats-bars"></i> Estatísticas</a></li>
         </ul>
       </div>
     </div>
@@ -46,18 +45,19 @@
         <div class="flex-center">
           <div class="wrapper">
             <h1>Participe da gestão da sua cidade</h1>
-            <h3>Acesse o aplicativo APPLICATION_NAME e colabore com a Prefeitura de CITY_NAME a tornar sua administração cada vez mais inteligente e participativa.</h3>
+            <h3>Acesse o aplicativo Particity e colabore com a Prefeitura de Cascavel a tornar sua administração cada vez mais inteligente e participativa.</h3>
             <div class="platforms">
               <div class="col-xs-4 ios has-ios-app-link">
                 <a href="IOS_APP_LINK" target="_blank" alt="Disponível na App Store"></a>
                 <h6>Para iPhone e iPad</h6>
               </div><!--/.ios -->
               <div class="col-xs-4 android has-android-app-link">
-                <a href="ANDROID_APP_LINK" target="_blank" alt="Disponível no Google Play"></a>
+                <a href="http://particity.cascavel.pr.gov.br/" target="_blank" alt="Disponível no Google Play"></a>
                 <h6>Para celular e tablet Android</h6>
               </div><!--/.android -->
               <div class="col-xs-4 web has-web-app-link">
-                <a href="WEB_APP_LINK" target="_blank" alt="Acesse daqui mesmo, cadastre-se"></a>
+                  <button type="button" class="arrivalbutton"><span href="http://particity.cascavel.pr.gov.br/web" class="arrivalbutton">ACESSE DAQUI MESMO</span> CADASTRE-SE
+                  <img src="images/arrow.svg"></button>
                   <h6>Direto no seu navegador</h6>
               </div><!--/.web -->
             </div><!--/.platforms -->
@@ -87,7 +87,7 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <h1>Como funciona</h1>
-        <p class="desc">O aplicativo APPLICATION_NAME é um meio de comunicação entre você, cidadão, e a prefeitura de sua cidade.<br />Do celular, tablet ou computador, você pode contribuir na gestão da sua cidade fazendo solicitações e acompanhando o andamento dos serviços solicitados por você e por outras pessoas.</p>
+        <p class="desc">O aplicativo ZUP é um meio de comunicação entre você, cidadão, e a prefeitura de sua cidade.<br />Do celular, tablet ou computador, você pode contribuir na gestão da sua cidade fazendo solicitações e acompanhando o andamento dos serviços solicitados por você e por outras pessoas.</p>
         <div class="col-xs-4 w-padding-left passos">
           <img src="images/comofunciona_icone1@2x.png" class="img-responsive" alt="">
           <h2>1. Solicite</h2>
@@ -108,52 +108,6 @@
   </div><!--/.container -->
 </section><!--/#plataformas -->
 
-<section id="estatisticas">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <h1>Estatísticas</h1>
-        <p>Veja como andam as solicitações feitas no último mês.</p>
-        <div class="loading-wrapper">
-          <div class="loading">
-            <i class="ion-ios7-reloading"></i>
-            <p>Carregando estatísticas...</p>
-          </div><!--/.loading -->
-        </div><!--/.loading-wrapper -->
-        <!--<div class="loading-space"></div>-->
-        <div class="estatisticas">
-          <div class="col-xs-4">
-            <div class="pie resolvidas"></div>
-            <div class="stats-wrapper resolvidas flex-center">
-              <div class="stats">
-                <h1></h1>
-                <p>Solicitações<br /><span>resolvidas</span></p>
-              </div><!--/.stats -->
-            </div><!--/.stats-wrapper -->
-          </div><!--/.col-xs-4 -->
-          <div class="col-xs-4">
-          <div class="pie andamento"></div>
-            <div class="stats-wrapper andamento flex-center">
-              <div class="stats">
-                <h1></h1>
-                <p>Solicitações <span>em andamento</span></p>
-              </div><!--/.stats -->
-            </div><!--/.stats-wrapper -->
-          </div><!--/.col-xs-4 -->
-          <div class="col-xs-4">
-            <div class="pie aberto"></div>
-            <div class="stats-wrapper aberto flex-center">
-              <div class="stats">
-                <h1></h1>
-                <p>Solicitações <span>em aberto</span></p>
-              </div><!--/.stats -->
-            </div><!--/.stats-wrapper -->
-          </div><!--/.col-xs-4 -->
-        </div><!--/.estatisticas -->
-      </div><!--/.col-xs-12 -->
-    </div><!--/.row -->
-  </div><!--/.container -->
-</section><!--/#estatisticas -->
 
 <footer>
   <div class="container">
@@ -165,7 +119,7 @@
       </div><!--/.col-xs-3 -->
       <div class="col-xs-10">
         <div class="pull-right">
-          <p>APPLICATION_NAME é um software livre desenvolvido pelo</p>
+          <p>ZUP é um software livre desenvolvido pelo</p>
           <a href="http://institutotim.org.br" target="_blank"><img src="images/Logo_Instituto_TIM_RGB_Fundo_escuro.png" class="img-responsive logo-tim" alt="Instituto TIM"></a>
         </div>
       </div><!--/.col-xs-9 -->
