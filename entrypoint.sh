@@ -3,8 +3,8 @@ set -e
 set -o pipefail
 
 blow_up() {
-	echo "Missing required enviroment variable '$1'. Please, take a look at the manual." >&2
-	exit 1
+        echo "Missing required enviroment variable '$1'. Please, take a look at the manual." >&2
+        exit 1
 }
 [ "$API_URL" ] || blow_up 'API_URL'
 [ "$MAP_LAT" ] || blow_up 'MAP_LAT'
@@ -25,7 +25,7 @@ else
         sed -i "s@GOOGLE_ANALYTICS_KEY@$GOOGLE_ANALYTICS_KEY@g" /var/www/zup-painel/index.html
         sed -i "s@PAGE_TITLE@$PANEL_PAGE_TITLE@g" /var/www/zup-painel/index.html
 
-	[ -d /painel/images ] && cp -R /painel/images/*.* /var/www/zup-painel/assets/images
+        [ -d /painel/images ] && cp -R /painel/images/*.* /var/www/zup-painel/assets/images
 fi
 
 if [ "$DISABLE_WEB_APP" = true ] ; then
